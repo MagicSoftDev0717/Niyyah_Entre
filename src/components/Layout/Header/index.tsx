@@ -195,15 +195,14 @@ const Header: React.FC = () => {
             </div>
 
             <div className="flex justify-end items-center">
-              <Link
-                href="#"
+              <button
                 className="hidden lg:block bg-transparent text-white border hover:border-primary hover:text-primary hover:text-darkmode px-12 py-2"
                 onClick={() => {
                   setIsSignInOpen(true);
                 }}
               >
                 JOIN FREE
-              </Link>
+              </button>
               {isSignInOpen && (
                 <div className="fixed top-0 left-0 w-full h-full bg-transparent bg-opacity-20 flex items-center justify-center z-50">
                   <div

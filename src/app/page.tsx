@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 //import "./layout.css";
 export default function Home() {
   return (
-    <main style={{fontFamily: 'Arial, San-Series'}}>
+    <main>
       <Hero />
       <AboutUs />
       <Services />
