@@ -1,7 +1,16 @@
-import { perksData } from "@/app/api/data";
-import Image from "next/image";
+"use client"
+import { useState, useRef } from "react";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
-const Perks = () => {
+import Logo from "@/components/Layout/Header/Logo";
+
+const Insights = () => {
+
+
+  /////////////////////////////////////////////////
+  const [isSignInOpen, setIsSignInOpen] = useState(false);
+  const signInRef = useRef<HTMLDivElement>(null);
+
   return (
     <section className="">
       <div className="container grid grid-rows-2 mx-auto lg:max-w-full bg-[#000000]">
@@ -54,7 +63,8 @@ const Perks = () => {
           <div className="col-span-1">
           </div>
           <div className="col-span-1 flex flex-row justify-center items-center gap-6">
-            <button className="p-3 bg-purple-600 text-white hover:bg-purple-700 transition-all w-72">
+            <button onClick={() => setIsSignInOpen(true)}
+              className="p-3 bg-purple-600 text-white hover:bg-purple-700 transition-all w-72">
               Join Community
             </button>
           </div>
@@ -63,8 +73,44 @@ const Perks = () => {
           </div>
         </div>
       </div>
+      {isSignInOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-20 z-50" >
+
+          <div
+            ref={signInRef}
+            className="mx-auto bg-gray-600 bg-opacity-20 w-full max-w-md overflow-hidden px-8 pt-14 pb-8 text-center bg-dark_grey bg-opacity-90 backdrop-blur-md"
+          >
+            <button
+              onClick={() => setIsSignInOpen(false)}
+              className="absolute top-0 right-0 mr-3 mt-4 dark:invert"
+              aria-label="Close Sign In Modal"
+            >
+              <Icon
+                icon="tabler:currency-xrp"
+                className="text-white hover:text-primary text-24 inline-block me-2"
+              />
+            </button>
+            <div className="flex flex-col items-center jusity-center">
+              <div className="items-center jusity-center mb-12">
+                <Logo />
+              </div>
+              <div className="items-center jusity-center mb-12">
+                <span className="text-2xl text-yellow-300 fond-bold">Thank You for Joining Us! 🎉</span>
+              </div>
+              <div className="items-center jusity-center">
+                <span className="text-lg text-white">
+                  Your submission has been received! 🚀<br />
+                  Our team is excited to have you on<br />
+                  board and will reach out soon with the<br />
+                  next steps.</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      )}
     </section >
   );
 };
 
-export default Perks;
+export default Insights;

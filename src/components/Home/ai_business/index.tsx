@@ -1,8 +1,14 @@
 "use client";
 import Link from "next/link";
+import { useState, useRef } from "react";
+import Signin from "@/components/Auth/SignIn";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
+const Ai_Business = () => {
+  /////////////////////////////////////////////////
+  const [isSignInOpen, setIsSignInOpen] = useState(false);
+  const signInRef = useRef<HTMLDivElement>(null);
 
-const Portfolio = () => {
   return (
     <section className="relative md:pt-0" id="portfolio">
       <div className="container grid grid-rows-8 h-screen mx-auto lg:max-w-full bg-[url('/assets/AI_business/AI.svg')] bg-cover bg-center bg-no-repeat">
@@ -59,8 +65,8 @@ const Portfolio = () => {
           <div className="flex flex-col items-center justify-center transform scale-y-[-1]">
             {/* Responsive Heading */}
             <h6
-              className="text-lg text-center leading-tight flex flex-col items-center justify-center  mb-4">
-              <span className="mb-4">
+              className="text-xl text-center leading-tight flex flex-col items-center justify-center  mb-4">
+              <span className="mb-4 font-bold">
                 Ready to Start or Scale your Business?
               </span>
               <span>
@@ -69,21 +75,42 @@ const Portfolio = () => {
             </h6>
 
             {/* Responsive Button */}
-            <Link
-              href="#"
-              className="px-8 md:px-8 py-2 md:py-2 bg-transparent text-white font-bold border border-transparent hover:border-white hover:text-white transition-all duration-300"
+            <button 
+              onClick={() => { setIsSignInOpen(true);}}
+              className="px-8 md:px-12 py-2 md:py-2 bg-transparent text-white font-bold border border-transparent hover:border-white hover:text-white transition-all duration-300"
               style={{
                 backgroundColor: "#7C23DD",
                 fontSize: "clamp(1rem, 2vw, 1.5rem)", // Adjusts button text size dynamically
               }}
             >
               Join Now
-            </Link>
+              </button> 
           </div>
         </div>
       </div>
+      {isSignInOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-transparent bg-opacity-10 z-50" >
+
+          <div
+            ref={signInRef}
+            className="mx-auto bg-black bg-opacity-20 w-full max-w-md overflow-hidden px-8 pt-14 pb-8 text-center bg-dark_grey bg-opacity-90 backdrop-blur-md"
+          >
+            <button
+              onClick={() => setIsSignInOpen(false)}
+              className="absolute top-0 right-0 mr-3 mt-4 dark:invert"
+              aria-label="Close Sign In Modal"
+            >
+              <Icon
+                icon="tabler:currency-xrp"
+                className="text-white hover:text-primary text-24 inline-block me-2"
+              />
+            </button>
+            <Signin />
+          </div>
+        </div>
+      )}
     </section >
   );
 };
 
-export default Portfolio;
+export default Ai_Business;

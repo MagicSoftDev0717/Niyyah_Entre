@@ -46,18 +46,18 @@ const Signin = () => {
 
   return (
     <>
-      <div className="mb-10 text-center text-2xl text-white mx-auto inline-block max-w-[3200px] bg-transparent bg-opacity-20 ">
+      <div className="text-center text-2xl text-white mx-auto inline-block max-w-[3200px] bg-transparent bg-opacity-20 ">
         {/* <Logo /> */}
         Unlock Your Full Potential!
       </div>
 
       {/* <SocialSignIn /> */}
 
-      {/* <span className="z-1 relative my-8 block text-center before:content-[''] before:absolute before:h-px before:w-40% before:bg-dark_border before:bg-opacity-60 before:left-0 before:top-3 after:content-[''] after:absolute after:h-px after:w-40% after:bg-dark_border after:bg-opacity-60 after:top-3 after:right-0">
-        <span className="text-body-secondary relative z-10 inline-block px-3 text-base text-white">
-          OR
+      <span className="z-1 relative my-8 block text-center">
+        <span className="text-body-secondary relative z-10 inline-block px-3 text-medium text-white">
+        Fill out the form to get exclusive access<br /> to expert insights, personalized<br /> solutions, and the latest innovations in<br /> AI, AR, and entrepreneurship.
         </span>
-      </span> */}
+      </span>
 
       <form onSubmit={(e) => e.preventDefault()}>
         <div className="mb-[22px]">

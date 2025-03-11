@@ -88,40 +88,20 @@ const Hero = () => {
             </h2>
 
             <div className="flex justify-end items-center">
-            <Link
-              onClick={() => {
-                setIsSignInOpen(true);
-              }}
-              href="#"
-              className="px-8 md:px-12 py-3 md:py-2 bg-transparent text-white font-bold border border-transparent hover:border-white hover:text-white transition-all duration-300"
-              style={{
-                backgroundColor: "#7C23DD",
-                fontSize: "clamp(1rem, 2vw, 1.5rem)", // Adjusts button text size dynamically
-              }}
-            >
-              Let's Start
-            </Link>
-            {isSignInOpen && (
-              <div className="fixed inset-0 flex items-center justify-center bg-transparent bg-opacity-20 z-50" >
-                <div
-                style={{marginTop: '-26em'}}
-                  ref={signInRef}
-                  className="relative mx-auto bg-transparent bg-opacity-50 w-full max-w-md overflow-hidden px-8 pt-14 pb-8 text-center bg-dark_grey bg-opacity-90 backdrop-blur-md"
-                >
-                  <button
-                    onClick={() => setIsSignInOpen(false)}
-                    className="absolute top-0 right-0 mr-3 mt-4 dark:invert"
-                    aria-label="Close Sign In Modal"
-                  >
-                    <Icon
-                      icon="tabler:currency-xrp"
-                      className="text-white hover:text-primary text-24 inline-block me-2"
-                    />
-                  </button>
-                  <Signin />
-                </div>
-              </div>
-            )}
+              <button
+                onClick={() => {
+                  setIsSignInOpen(true);
+                }}
+
+                className="px-8 md:px-12 py-3 md:py-2 bg-transparent text-white font-bold border border-transparent hover:border-white hover:text-white transition-all duration-300"
+                style={{
+                  backgroundColor: "#7C23DD",
+                  fontSize: "clamp(1rem, 2vw, 1.5rem)", // Adjusts button text size dynamically
+                }}
+              >
+                Let's Start
+              </button>
+
             </div>
           </div>
         </div>
@@ -170,6 +150,27 @@ const Hero = () => {
               />
             </button>
 
+          </div>
+        </div>
+      )}
+      {isSignInOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-transparent bg-opacity-20 z-50" >
+          <div
+
+            ref={signInRef}
+            className="relative mx-auto bg-black bg-opacity-20 w-full max-w-md overflow-hidden px-8 pt-14 pb-8 text-center bg-dark_grey bg-opacity-90 backdrop-blur-md"
+          >
+            <button
+              onClick={() => setIsSignInOpen(false)}
+              className="absolute top-0 right-0 mr-3 mt-4 dark:invert"
+              aria-label="Close Sign In Modal"
+            >
+              <Icon
+                icon="tabler:currency-xrp"
+                className="text-white hover:text-primary text-24 inline-block me-2"
+              />
+            </button>
+            <Signin />
           </div>
         </div>
       )}

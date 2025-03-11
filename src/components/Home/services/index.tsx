@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-const TimeLine = () => {
+const Services = () => {
   const ref = useRef(null);
   const inView = useInView(ref);
 
@@ -60,7 +60,7 @@ const TimeLine = () => {
                 <span className="text-5xl font-bold text-left leading-tight">Solutions For You</span>
               </div>
               <span className="text-3xl text-center leading-tight flex flex-col justify-center">
-                Niiyyah for Success. Achieve Business Excellence
+                Niyyah for Success. Achieve Business Excellence
               </span>
             </div>
           </div>
@@ -96,4 +96,4 @@ const TimeLine = () => {
   );
 };
 
-export default TimeLine;
+export default Services;

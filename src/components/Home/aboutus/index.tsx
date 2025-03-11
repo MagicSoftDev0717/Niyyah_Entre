@@ -66,7 +66,7 @@ const AboutUs = () => {
                   setIsSignInOpen(true);
                 }}
 
-                className="px-8 md:px-12 py-3 md:py-3 bg-transparent text-white font-bold border border-transparent hover:border-white hover:text-white transition-all duration-300"
+                className="px-8 md:px-6 py-3 md:py-3 bg-transparent text-white font-bold border border-transparent hover:border-white hover:text-white transition-all duration-300"
                 style={{ backgroundColor: "#7C23DD", fontSize: "clamp(1rem, 2vw, 1.5rem)" }}>
                 Join the Vision
               </button>
@@ -104,7 +104,7 @@ const AboutUs = () => {
 
         <div
           ref={signInRef}
-          className="mx-auto bg-transparent bg-opacity-50 w-full max-w-md overflow-hidden px-8 pt-14 pb-8 text-center bg-dark_grey bg-opacity-90 backdrop-blur-md"
+          className="mx-auto bg-black bg-opacity-20 w-full max-w-md overflow-hidden px-8 pt-14 pb-8 text-center bg-dark_grey bg-opacity-90 backdrop-blur-md"
         >
           <button
             onClick={() => setIsSignInOpen(false)}

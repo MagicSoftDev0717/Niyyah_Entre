@@ -118,7 +118,7 @@ const Clock = () => {
 
           <div
             ref={signInRef}
-            className="mx-auto bg-transparent bg-opacity-50 w-full max-w-md overflow-hidden px-8 pt-14 pb-8 text-center bg-dark_grey bg-opacity-90 backdrop-blur-md"
+            className="mx-auto bg-black bg-opacity-20 w-full max-w-md overflow-hidden px-8 pt-14 pb-8 text-center bg-dark_grey bg-opacity-90 backdrop-blur-md"
           >
             <button
               onClick={() => setIsSignInOpen(false)}

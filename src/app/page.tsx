@@ -1,11 +1,11 @@
 import React from "react";
 import Hero from "@/components/Home/Hero";
 import AboutUs from "@/components/Home/aboutus";
-import TimeLine from "@/components/Home/timeline";
+import Services from "@/components/Home/services";
 import Clock from "@/components/Home/clock";
-import Portfolio from "@/components/Home/portfolio";
-import Upgrade from "@/components/Home/upgrade";
-import Perks from "@/components/Home/perks";
+import Ai_Business from "@/components/Home/ai_business";
+import AR_Network from "@/components/Home/ar_net";
+import Insights from "@/components/Home/insight";
 import Checks from "@/components/Home/checks";
 import Faith from "@/components/Home/faith";
 import { Metadata } from "next";
@@ -19,11 +19,11 @@ export default function Home() {
     <main style={{fontFamily: 'Arial, San-Series'}}>
       <Hero />
       <AboutUs />
-      <TimeLine />
+      <Services />
       <Clock />
-      <Portfolio />
-      <Upgrade />
-      <Perks />
+      <Ai_Business />
+      <AR_Network />
+      <Insights />
       <Checks />
       <Faith />
     </main>

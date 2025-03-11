@@ -176,7 +176,7 @@ const Header: React.FC = () => {
                   <span className="text-white hover:text-yellow-500">{selectedLang}</span>
                 </div>
                 {isOpen && (
-                  <div className="absolute top-full mt-2 w-48 bg-black text-white rounded-md shadow-lg">
+                  <div className="absolute top-full mt-2 w-48 bg-black text-white shadow-lg">
                     {languages.map((lang, index) => (
                       <div
                         key={index}
@@ -208,7 +208,7 @@ const Header: React.FC = () => {
                 <div className="fixed top-0 left-0 w-full h-full bg-transparent bg-opacity-20 flex items-center justify-center z-50">
                   <div
                     ref={signInRef}
-                    className="relative mx-auto bg-transparent bg-opacity-50 w-full max-w-md overflow-hidden px-8 pt-14 pb-8 text-center bg-dark_grey bg-opacity-90 backdrop-blur-md"
+                    className="relative mx-auto bg-black bg-opacity-20 w-full max-w-md overflow-hidden px-8 pt-14 pb-8 text-center bg-dark_grey bg-opacity-90 backdrop-blur-md"
                   >
                     <button
                       onClick={() => setIsSignInOpen(false)}

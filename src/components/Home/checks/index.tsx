@@ -1,6 +1,9 @@
 "use client"
-
+import { useState } from "react";
+import Logo from "@/components/Layout/Header/Logo";
+import { Icon } from "@iconify/react/dist/iconify.js";
 const Checks = () => {
+const [isSignInOpen, setIsSignInOpen] = useState(false);
 
   return (
     <section className="">
@@ -69,7 +72,7 @@ const Checks = () => {
                 className="p-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 w-80"
               />
 
-              <button className="p-2 bg-yellow-600 text-black font-bold hover:bg-purple-700 transition-all w-40">
+              <button onClick={() => setIsSignInOpen(true)} className="p-2 bg-yellow-600 text-black font-bold hover:bg-purple-700 transition-all w-40">
                 Join Waiting List
               </button>
             </div>
@@ -102,6 +105,43 @@ const Checks = () => {
         }}
       >
       </div> */}
+
+
+      {isSignInOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-20 z-50" >
+
+          <div
+            className="mx-auto bg-gray-600 bg-opacity-20 w-full max-w-md overflow-hidden px-8 pt-14 pb-8 text-center bg-dark_grey bg-opacity-90 backdrop-blur-md"
+          >
+            <button
+              onClick={() => setIsSignInOpen(false)}
+              className="absolute top-0 right-0 mr-3 mt-4 dark:invert"
+              aria-label="Close Sign In Modal"
+            >
+              <Icon
+                icon="tabler:currency-xrp"
+                className="text-white hover:text-primary text-24 inline-block me-2"
+              />
+            </button>
+            <div className="flex flex-col items-center jusity-center">
+              <div className="items-center jusity-center mb-12">
+                <Logo />
+              </div>
+              <div className="items-center jusity-center mb-12">
+                <span className="text-2xl text-yellow-300 fond-bold">Thank You for Joining Us! 🎉</span>
+              </div>
+              <div className="items-center jusity-center">
+                <span className="text-lg text-white">
+                  Your submission has been received! 🚀<br />
+                  Our team is excited to have you on<br />
+                  board and will reach out soon with the<br />
+                  next steps.</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      )}
     </section >
   );
 };

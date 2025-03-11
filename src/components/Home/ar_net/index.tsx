@@ -1,6 +1,8 @@
 "use client"
-import { useState } from "react";
-import Link from "next/link";
+import { useState, useRef } from "react";
+import Signin from "@/components/Auth/SignIn";
+import { Icon } from "@iconify/react/dist/iconify.js";
+
 const defaultImages = [
   "AR-1.svg",
   "AR-2.svg",
@@ -39,7 +41,7 @@ const popupImages = [
 ];
 
 
-const Upgrade = () => {
+const AR_Network = () => {
   const [arImgs, setArImgs] = useState(defaultImages);
   const [popupImg, setPopupImg] = useState<string | null>(null);
 
@@ -68,6 +70,11 @@ const Upgrade = () => {
       setPopupImg(null);
     }
   };
+
+  /////////////////////////////////////////////////
+  const [isSignInOpen, setIsSignInOpen] = useState(false);
+  const signInRef = useRef<HTMLDivElement>(null);
+
   return (
     <section className="" id="upgrade">
       <div className="container grid grid-cols-12 h-screen mx-auto lg:max-w-full bg-[#000833]">
@@ -78,13 +85,13 @@ const Upgrade = () => {
           <div className="row-span-1 mb-4">
             <span className="flex flex-col mb-8"></span>
             <span className="flex flex-col mb-8"></span>
-            <span className="text-5xl font-bold text-left leading-tight flex flex-col justify-center mb-8">AR Network</span>
-            <span className="text-2xl text-left leading-tight flex flex-col justify-center mb-4">
+            <span className="text-5xl font-bold text-left leading-tight flex flex-col justify-center mb-12">AR Network</span>
+            <span className="text-2xl text-left leading-tight flex flex-col justify-center mb-8">
               The Ummah’s Augmented Reality Network<br /> Creating Immersive Experiences
             </span>
             <span className="text-lg text-left leading-tight flex flex-col justify-center">
-              Bring your ideas to life with cutting-edge AR technology! Enhance customer engagement,<br /> create
-              immersive experiences, and elevate your brand with interactive, next-gen solutions.<br /> Whether for
+              Bring your ideas to life with cutting-edge AR technology! Enhance customer engagement, create
+              immersive experiences, and elevate your brand with interactive, next-gen solutions. Whether for
               marketing, training, or product visualization — AR takes your business to the future.
             </span>
           </div>
@@ -102,14 +109,15 @@ const Upgrade = () => {
                   onClick={() => handleImageClick(idx)} />
               </div>
             ))}
-            <Link
-              href="#" className="px-8 md:px-8 py-3 md:py-1 bg-transparent text-white font-bold border border-transparent hover:border-white hover:text-white transition-all duration-300"
+            <button
+              onClick={() => { setIsSignInOpen(true); }}
+              className="px-8 md:px-8 py-3 md:py-1 bg-transparent text-white font-bold border border-transparent hover:border-white hover:text-white transition-all duration-300"
               style={{
                 backgroundColor: "#7C23DD",
                 fontSize: "clamp(1rem, 2vw, 1.5rem)", // Adjusts button text size dynamically
               }}
             >Join Waiting
-            </Link>
+            </button>
           </div>
           {/* <div className="row-span-1">
 
@@ -138,8 +146,30 @@ const Upgrade = () => {
 
         </div>
       </div>
+
+      {isSignInOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-transparent bg-opacity-10 z-50" >
+
+          <div
+            ref={signInRef}
+            className="mx-auto bg-black bg-opacity-20 w-full max-w-md overflow-hidden px-8 pt-14 pb-8 text-center bg-dark_grey bg-opacity-90 backdrop-blur-md"
+          >
+            <button
+              onClick={() => setIsSignInOpen(false)}
+              className="absolute top-0 right-0 mr-3 mt-4 dark:invert"
+              aria-label="Close Sign In Modal"
+            >
+              <Icon
+                icon="tabler:currency-xrp"
+                className="text-white hover:text-primary text-24 inline-block me-2"
+              />
+            </button>
+            <Signin />
+          </div>
+        </div>
+      )}
     </section>
   );
 };
 
-export default Upgrade;
+export default AR_Network;
