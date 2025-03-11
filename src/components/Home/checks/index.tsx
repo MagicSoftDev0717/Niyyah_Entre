@@ -57,22 +57,26 @@ const [isSignInOpen, setIsSignInOpen] = useState(false);
               <input
                 type="text"
                 placeholder="Your name*"
-                className="p-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 w-80"
+                className="p-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 w-1/2"
               />
 
               <input
                 type="email"
                 placeholder="Your email*"
-                className="p-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 w-80"
+                className="p-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 w-1/2"
               />
 
               <input
                 type="tel"
                 placeholder="Your phone number*"
-                className="p-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 w-80"
+                className="p-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 w-1/2"
               />
 
-              <button onClick={() => setIsSignInOpen(true)} className="p-2 bg-yellow-600 text-black font-bold hover:bg-purple-700 transition-all w-40">
+              <button onClick={() => setIsSignInOpen(true)} 
+              className="px-4 md:px-8 py-3 md:py-2 bg-yellow-600 text-black font-bold hover:bg-white transition-all w-1/3"
+              style={{
+                fontSize: "clamp(1rem, 2vw, 1.5rem)", // Adjusts button text size dynamically
+              }}>
                 Join Waiting List
               </button>
             </div>

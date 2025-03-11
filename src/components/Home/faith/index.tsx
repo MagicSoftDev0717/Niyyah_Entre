@@ -113,42 +113,42 @@ const Faith = () => {
           </span>
 
         </div>
-        <div className="row-span-1 grid grid-cols-11 flex flex-col items-center justify-center">
-          <div className="col-span-2"></div>
+        <div className="row-span-1 grid grid-cols-6 flex flex-col items-center justify-center">
+          <div className="col-span-1"></div>
 
-          <div className="col-span-1 flex flex-row justify-center items-center">
+          <div className="col-span-1 flex flex-row justify-center items-center gap-6">
             <input
               type="text"
               placeholder="Your name*"
-              className="p-2 bg-transparent border-b-2 focus:outline-none focus:ring-2 focus:ring-purple-500 w-80"
+               className="p-2 bg-transparent border-b-2 text-white placeholder-gray-500 focus:outline-none focus:ring-0 focus:border-purple-500 w-72"
             />
           </div>
-          <div className="col-span-1 flex flex-row justify-center items-center"></div>
+         
 
-          <div className="col-span-1 flex flex-row justify-center items-center">
+          <div className="col-span-1 flex flex-row justify-center items-center gap-6">
             <input
               type="email"
               placeholder="Your email*"
-              className="p-2 bg-transparent bg-transparent border-b-2 focus:outline-none focus:ring-2 focus:ring-purple-500 w-80"
+               className="p-2 bg-transparent border-b-2 text-white placeholder-gray-500 focus:outline-none focus:ring-0 focus:border-purple-500 w-72"
             />
           </div>
-          <div className="col-span-1 flex flex-row justify-center items-center"></div>
-          <div className="col-span-1 flex flex-row justify-center items-center">
+          
+          <div className="col-span-1 flex flex-row justify-center items-center gap-6">
             <input
               type="text"
               placeholder="Your phone number*"
-              className="p-2 bg-transparent border-b-2 text-white placeholder-gray-500 focus:outline-none focus:ring-0 focus:border-purple-500 w-80"
+              className="p-2 bg-transparent border-b-2 text-white placeholder-gray-500 focus:outline-none focus:ring-0 focus:border-purple-500 w-72"
             />
 
           </div>
-          <div className="col-span-1 flex flex-row justify-center items-center"></div>
-          <div className="col-span-1 flex flex-row justify-center items-center">
-            <button onClick={() => setIsSignInOpen(true)} className="p-2 bg-yellow-600 text-black hover:bg-white transition-all w-80">
+        
+          <div className="col-span-1 flex flex-row justify-center items-center gap-6">
+            <button onClick={() => setIsSignInOpen(true)} className="p-2 bg-yellow-600 text-black font-bold hover:bg-white transition-all w-48">
               Submit
             </button>
           </div>
 
-          <div className="col-span-3"></div>
+          <div className="col-span-1"></div>
         </div>
 
         <div className="grid grid-cols-9">

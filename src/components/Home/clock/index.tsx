@@ -76,10 +76,10 @@ const Clock = () => {
               <div key={index} className="flex flex-col justify-center items-center text-white text-center">
                 {/* SVG Container with Relative Positioning */}
                 <div className="relative w-36 h-36 flex justify-center items-center">
-                  <img src={`/assets/Clock/${item.img}`} alt={item.label} className="w-full h-full" />
+                  <img src={`/assets/Clock/${item.img}`} alt={item.label} className="w-3/4 h-3/4" />
 
                   {/* Absolutely Centered Time Value */}
-                  <span className="absolute text-6xl font-bold text-white">{item.value}</span>
+                  <span className="absolute text-7xl font-bold text-white">{item.value}</span>
                 </div>
 
                 {/* Label Below the SVG */}
@@ -101,8 +101,8 @@ const Clock = () => {
 
           <div className="text-white">
             <button onClick={() => { setIsSignInOpen(true);}}
-              className="px-8 md:px-6 py-1 md:py-3 bg-transparent text-white font-bold border border-transparent hover:border-white hover:text-white transition-all duration-300"
-              style={{ backgroundColor: "#7C23DD", fontSize: "clamp(1rem, 2vw, 1.5rem)" }}>
+              className="px-8 md:px-6 py-1 md:py-3 bg-purple-600 text-white font-bold hover:bg-white hover:text-purple-700 transition-all duration-300"
+              style={{ fontSize: "clamp(1rem, 2vw, 1.5rem)" }}>
               Join the Journey
             </button>
           </div>

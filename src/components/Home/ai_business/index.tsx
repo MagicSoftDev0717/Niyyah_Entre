@@ -77,9 +77,8 @@ const Ai_Business = () => {
             {/* Responsive Button */}
             <button 
               onClick={() => { setIsSignInOpen(true);}}
-              className="px-8 md:px-12 py-2 md:py-2 bg-transparent text-white font-bold border border-transparent hover:border-white hover:text-white transition-all duration-300"
+              className="px-8 md:px-12 py-2 md:py-2 bg-purple-600 text-white font-bold hover:bg-white hover:text-purple-700 transition-all duration-300"
               style={{
-                backgroundColor: "#7C23DD",
                 fontSize: "clamp(1rem, 2vw, 1.5rem)", // Adjusts button text size dynamically
               }}
             >
