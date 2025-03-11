@@ -208,7 +208,7 @@ const Header: React.FC = () => {
                 <div className="fixed top-0 left-0 w-full h-full bg-transparent bg-opacity-20 flex items-center justify-center z-50">
                   <div
                     ref={signInRef}
-                    className="relative mx-auto bg-white bg-opacity-10 w-full max-w-md overflow-hidden px-8 pt-14 pb-8 text-center bg-dark_grey bg-opacity-90 backdrop-blur-md"
+                    className="relative mx-auto bg-transparent bg-opacity-50 w-full max-w-md overflow-hidden px-8 pt-14 pb-8 text-center bg-dark_grey bg-opacity-90 backdrop-blur-md"
                   >
                     <button
                       onClick={() => setIsSignInOpen(false)}

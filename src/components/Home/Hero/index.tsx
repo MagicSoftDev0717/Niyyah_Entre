@@ -106,7 +106,7 @@ const Hero = () => {
                 <div
                 style={{marginTop: '-26em'}}
                   ref={signInRef}
-                  className="mx-auto bg-white bg-opacity-10 w-full max-w-md overflow-hidden px-8 pt-14 pb-8 text-center bg-dark_grey bg-opacity-90 backdrop-blur-md"
+                  className="mx-auto bg-transparent bg-opacity-50 w-full max-w-md overflow-hidden px-8 pt-14 pb-8 text-center bg-dark_grey bg-opacity-90 backdrop-blur-md"
                 >
                   <button
                     onClick={() => setIsSignInOpen(false)}
