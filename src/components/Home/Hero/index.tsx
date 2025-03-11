@@ -106,11 +106,11 @@ const Hero = () => {
                 <div
                 style={{marginTop: '-26em'}}
                   ref={signInRef}
-                  className="mx-auto bg-transparent bg-opacity-50 w-full max-w-md overflow-hidden px-8 pt-14 pb-8 text-center bg-dark_grey bg-opacity-90 backdrop-blur-md"
+                  className="relative mx-auto bg-transparent bg-opacity-50 w-full max-w-md overflow-hidden px-8 pt-14 pb-8 text-center bg-dark_grey bg-opacity-90 backdrop-blur-md"
                 >
                   <button
                     onClick={() => setIsSignInOpen(false)}
-                    className="absolute top-0 right-0 mr-4 mt-4 dark:invert"
+                    className="absolute top-0 right-0 mr-3 mt-4 dark:invert"
                     aria-label="Close Sign In Modal"
                   >
                     <Icon

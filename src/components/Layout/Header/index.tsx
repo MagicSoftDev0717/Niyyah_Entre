@@ -212,7 +212,7 @@ const Header: React.FC = () => {
                   >
                     <button
                       onClick={() => setIsSignInOpen(false)}
-                      className="absolute top-0 right-0 mr-4 mt-4 dark:invert"
+                      className="absolute top-0 right-0 mr-3 mt-4 dark:invert"
                       aria-label="Close Sign In Modal"
                     >
                       <Icon

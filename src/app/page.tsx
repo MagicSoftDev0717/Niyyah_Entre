@@ -1,8 +1,8 @@
 import React from "react";
 import Hero from "@/components/Home/Hero";
-import Work from "@/components/Home/work";
+import AboutUs from "@/components/Home/aboutus";
 import TimeLine from "@/components/Home/timeline";
-import Platform from "@/components/Home/platform";
+import Clock from "@/components/Home/clock";
 import Portfolio from "@/components/Home/portfolio";
 import Upgrade from "@/components/Home/upgrade";
 import Perks from "@/components/Home/perks";
@@ -18,9 +18,9 @@ export default function Home() {
   return (
     <main style={{fontFamily: 'Arial, San-Series'}}>
       <Hero />
-      <Work />
+      <AboutUs />
       <TimeLine />
-      <Platform />
+      <Clock />
       <Portfolio />
       <Upgrade />
       <Perks />

@@ -1,10 +1,10 @@
 "use client"
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import Signin from "@/components/Auth/SignIn";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
-
-
-const Platform = () => {
+const Clock = () => {
 
   const getTargetDate = () => {
     const now = new Date();
@@ -43,6 +43,10 @@ const Platform = () => {
       seconds: Math.floor((diff / 1000) % 60),
     };
   }
+
+  /////////////////////////////////////////////////
+  const [isSignInOpen, setIsSignInOpen] = useState(false);
+  const signInRef = useRef<HTMLDivElement>(null);
   return (
     <section className="relative z-1">
       <div className="container grid grid-rows-8 h-screen mx-auto lg:max-w-full bg-[#180033]" style={{ fontFamily: 'Opinion Pro Extended' }}>
@@ -83,8 +87,6 @@ const Platform = () => {
               </div>
             ))}
           </div>
-
-
         </div>
 
 
@@ -98,24 +100,42 @@ const Platform = () => {
           </div>
 
           <div className="text-white">
-            <Link
-              href="#"
+            <button onClick={() => { setIsSignInOpen(true);}}
               className="px-8 md:px-6 py-1 md:py-3 bg-transparent text-white font-bold border border-transparent hover:border-white hover:text-white transition-all duration-300"
               style={{ backgroundColor: "#7C23DD", fontSize: "clamp(1rem, 2vw, 1.5rem)" }}>
               Join the Journey
-            </Link>
+            </button>
           </div>
         </div>
         <div className="row-span-2  flex flex-col items-center justify-center" style={{
           background: "linear-gradient(180deg,  #000833 0%, rgba(0, 8, 51, 0) 100%)",
           transform: "matrix(1, 0, 0, -1, 0, 0)"
         }}>
-
         </div>
-
       </div>
+      {isSignInOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-transparent bg-opacity-10 z-50" >
+
+          <div
+            ref={signInRef}
+            className="mx-auto bg-transparent bg-opacity-50 w-full max-w-md overflow-hidden px-8 pt-14 pb-8 text-center bg-dark_grey bg-opacity-90 backdrop-blur-md"
+          >
+            <button
+              onClick={() => setIsSignInOpen(false)}
+              className="absolute top-0 right-0 mr-3 mt-4 dark:invert"
+              aria-label="Close Sign In Modal"
+            >
+              <Icon
+                icon="tabler:currency-xrp"
+                className="text-white hover:text-primary text-24 inline-block me-2"
+              />
+            </button>
+            <Signin />
+          </div>
+        </div>
+      )}
     </section>
   );
 };
 
-export default Platform;
+export default Clock;
